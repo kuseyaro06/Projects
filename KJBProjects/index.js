@@ -1,5 +1,5 @@
 $("div .btn-t1").on("click", function(){
-    $(".option-select").removeAttr("hidden");
+    $(".topic-select").removeAttr("hidden");
 
     setTimeout(function(){
         $(".answer-selections").removeAttr("hidden");

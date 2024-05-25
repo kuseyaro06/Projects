@@ -1,0 +1,63 @@
+/* This contains the CSS */ 
+
+/* Clean state here */ 
+
+* {
+    box-sizing: border-box;
+}
+
+/* Clean state end */ 
+
+/* Main stuff here */
+
+body {
+    height: 100vh;
+}
+
+.body-main {
+    display: flex;
+}
+
+/* Main stuff end */
+
+/* All Sidebar left content goes here */ 
+
+.sidebar-left {
+    width: 70%;
+    border: 2px solid salmon;
+    height: 100vh;
+    margin-right: 1rem;
+}
+
+
+.sibedar-content-main {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding: 20px;
+    align-items: flex-start;
+}
+
+.sidebar-right-items {
+    margin: 0;
+}
+
+/* Sidebar left end */
+
+.sidebar-right {
+    width: 30%;
+    border: 2px solid turquoise;
+    height: 100vh;
+    margin-left: 1rem;
+}
+
+
+/* All typography related stuff here  */ 
+
+
+.welcome-head {
+    text-align: center;
+}
+
+/* typography related end  */ 
