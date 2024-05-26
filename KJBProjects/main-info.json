@@ -1,0 +1,106 @@
+[{
+    "id": "",
+    "name": "custom domain",
+    "topics": [{
+        "sslErrors": [{
+            "pendingValidation": {
+                "qOne": "Is the domain done with propagation?"
+            },
+            "pVAnswers": [{
+                "yes": {
+                    "tOne": "Tag Tier 2",
+                    "tTwo": "Tag tech leads to check the status of SSL in the Cloudflare backend"
+                }
+            },
+            {
+                "no": "Advise hero to allow proper propagation time of 24 to 48 hours. Educate the hero not to make any further changes to avoid prolonging the process" 
+            }]
+        },
+        {
+            "sslRateLimited": {
+                "qOne":"Is the domain done with propagation?"
+            },
+            "ssrlAnswers": [{
+                "yes": {
+                    "tOne": "Tag Tier 2",
+                    "tTwo": "Tag tech leads to look for the possibility of changing the issued certificate"
+                },
+                "no": "Advise hero to allow proper propagation time of 24 - 48 hours. Educate the hero not to make any further changes to avoid prolonging the process - this includes reconnecting the custom domain in Kajabi"
+            }]
+        },
+        {
+            "deceptiveSite": {
+                "qOne":"Access the site's subdomain (.mykajabi.com). Is it working without errors?"
+            },
+            "dSAnswers": [{
+                "yes": "The domain may have likely been reported as phishing or something similar before they switched hosting to Kajabi. Advise the hero that this will require submitting a review to Google. Refer to: Security Issues report",
+                "link": "https://support.google.com/webmasters/answer/9044101#fix&zippy=%2Chacked-malware"
+            }, 
+            {
+               "no": {
+                    "tOne": "Tag Tier 2",
+                    "tTwo": "Tag Tech leads to further investigate the site following the confluence article: Kajabi Sites with Malware",
+                    "link": "https://kajabi.atlassian.net/wiki/spaces/CXHOME/pages/1745453866/Kajabi+Sites+with+Malware"
+               } 
+            }]
+        },
+        {
+            "thisSiteisNotSecured": {
+                "qOne": "Is it reproducible on your end when the site is accessed?"
+            },
+            "sNSAnswers": {
+                "seqOne": "Try Incognito. Did it resolve?",
+                "seqOneAnswers": {
+                    "yes": "Advise hero to clear cache",
+                    "no": {
+                        "howDidYouReproduce": {
+                            "accessDomainDirectly": [{
+                                "accDomain": "Run an SSL scan using Why no Padlock",
+                                "link": "https://www.whynopadlock.com/"
+                            },
+                            {
+                                "seqTwo": {
+                                    "errorsY": "Are there any errors?",
+                                    "yes": "Take a screenshot and tag tech leads to further investigate",
+                                    "no": "Check their DNS using WhatsMyDNS. Do they have the correct DNS records, is it all green?",
+                                    "link": "https://www.whatsmydns.net/" 
+                                }
+                            }, 
+                            {
+                                "seqThree": {
+                                    "yesOne": "Go to Whois.com and check when the domain was updated. Is it recent?",
+                                    "link": "https://www.whois.com/",
+                                    "followUp": [{
+                                        "yes": "Ask the hero if there are any recent changes made to the DNS. Is there a recent change?",
+                                        "fchoiceOne": {
+                                            "yes": "Advise the hero to allow propagation. The change to the DNS likely affected the SSL certificate and should resolve itself once propagation is completed.",
+                                            "no": {
+                                                "tOne": "Tag Tier 2",
+                                                "tTwo": "Tag tech leads to further investigate"
+                                            }
+                                        }
+                                    }],
+                                    "nOne": "Ask for a screenshot of the domain’s DNS. Is it the correct records?",
+                                    "followUpTwo": [{
+                                        "yes": "Ask the hero if there are any recent changes made to the DNS. Is there a recent change?",
+                                        "fchoice": {
+                                            "yes": "Advise the hero to allow propagation. The change to the DNS likely affected the SSL certificate and should resolve itself once propagation is completed.",
+                                            "no": {
+                                                "tOne":"Tag Tier 2",
+                                                "tTwo":"Tag tech leads to further investigate"
+                                            }
+                                        }
+                                    }]
+                                }
+                            }
+                            ],
+                            "accessFromLink": ""
+                        }
+                    }
+                },
+                "no": ""
+            }
+            
+        }]
+    }]
+}]

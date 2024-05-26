@@ -4,6 +4,8 @@
 
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 /* Clean state end */ 
@@ -16,6 +18,22 @@ body {
 
 .body-main {
     display: flex;
+}
+
+.question-buttons {
+    
+}
+
+.answer-buttons {
+
+}
+
+.topic-select {
+
+}
+
+.topic-select-answers {
+    
 }
 
 /* Main stuff end */
@@ -40,7 +58,7 @@ body {
 }
 
 .sidebar-right-items {
-    margin: 0;
+    margin: 5px;
 }
 
 /* Sidebar left end */

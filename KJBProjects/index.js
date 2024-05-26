@@ -6,7 +6,7 @@ $("div .btn-t1").on("click", function(){
     }, 1000);
 });
 
-$(".try").on("click", function(){
+$(".topic-select-answers").on("click", function(){
     $(".answer-hidden").removeAttr("hidden");
 
     setTimeout(function(){
